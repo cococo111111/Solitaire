@@ -28,4 +28,4 @@ Finally, the Game class uses the IGameActions, IBoardQuery (this is where we nee
 
 ### Art assets
 
-The card art is from a free Unity asset pack called []"Free Playing Cards - Ultimate Sport Pack"](https://www.assetstore.unity3d.com/en/#!/content/51076) by 1Poly. 
+The card art is from a free Unity asset pack called ["Free Playing Cards - Ultimate Sport Pack"](https://www.assetstore.unity3d.com/en/#!/content/51076) by 1Poly. 
