@@ -6,22 +6,25 @@ using UnityEngine.UI;
 
 public sealed class ButtonHandler : MonoBehaviour
 {
-    [SerializeField] Button draw;
-    [SerializeField] Button undo;
-    [SerializeField] Button newGame;
-    [SerializeField] Button undoBoard;
+    [SerializeField] Button drawButton;
+    [SerializeField] Button undoButton;
+    [SerializeField] Button newGameButton;
+    [SerializeField] Button undoBoardButton;
+    [SerializeField] Button quitButton;
 
-    public void Init(IGame game, IUndoHandler undoHandler)
+    public void Init(IGame game, IUndoHandler undoHandler, IQuit quitHandler)
     {
         if (game == null) throw new ArgumentNullException("game");
         if (undoHandler == null) throw new ArgumentNullException("undoHandler");
 
-        newGame.onClick.AddListener(game.NewGame);
+        newGameButton.onClick.AddListener(game.NewGame);
 
-        draw.onClick.AddListener(game.Draw);
+        drawButton.onClick.AddListener(game.Draw);
 
-        undo.onClick.AddListener(undoHandler.Undo);
+        undoButton.onClick.AddListener(undoHandler.Undo);
 
-        undoBoard.onClick.AddListener(undoHandler.UndoAll);
+        undoBoardButton.onClick.AddListener(undoHandler.UndoAll);
+
+        quitButton.onClick.AddListener(quitHandler.Quit);
     }
 }

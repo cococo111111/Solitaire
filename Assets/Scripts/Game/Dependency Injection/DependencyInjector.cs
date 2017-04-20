@@ -29,9 +29,10 @@ public sealed class DependencyInjector : MonoBehaviour
 
         game.Init(scoreBoard, board, deck);
         undoHandler.Init(scoreBoard);
-        UIUpdater uiUpdater = new UIUpdater(game, undoHandler, scoreBoard, text);
+        var uiUpdater = new UIUpdater(game, undoHandler, scoreBoard, text);
+        var quitHandler = new BasicQuit();
         inputHandler.Init(uiUpdater, uiUpdater);
-        buttonHandler.Init(uiUpdater, uiUpdater);
+        buttonHandler.Init(uiUpdater, uiUpdater, quitHandler);
     }
 
     Deck InstallDeck()
