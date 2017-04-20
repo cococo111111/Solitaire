@@ -7,11 +7,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public sealed class ScoreBoard: IUndo, IGameActions, IScore
+public sealed class ScoreBoard: IUndoActions, IGameActions, IScoreQuery
 {
     public int Score { get { return score; } }
 
-    readonly IUndo undoBoard;
+    readonly IUndoActions undoBoard;
     readonly IGameActions boardActions;
 
     readonly Stack<int> runHistory = new Stack<int>(GameRules.NUM_CARDS);
@@ -21,7 +21,7 @@ public sealed class ScoreBoard: IUndo, IGameActions, IScore
 
     const int scorePerRun = 100;
 
-    public ScoreBoard(IGameActions actions, IUndo undo)
+    public ScoreBoard(IGameActions actions, IUndoActions undo)
     {
         if (undo == null) throw new ArgumentNullException("undo");
         if (actions == null) throw new ArgumentNullException("actions");

@@ -6,11 +6,11 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-public sealed class UIUpdater : IGame, IUndoHandler
+public sealed class UIUpdater : IGame, IUndo
 {
     readonly IGame game;
-    readonly IScore score;
-    readonly IUndoHandler undo;
+    readonly IScoreQuery score;
+    readonly IUndo undo;
 
     readonly Text drawText;
     readonly Text scoreText;
@@ -20,7 +20,7 @@ public sealed class UIUpdater : IGame, IUndoHandler
     const string drawTextFormat = "Draws: {0}";
     const int drawTextDefaultValue = 2;
 
-    public UIUpdater(IGame game, IUndoHandler undo, IScore score, TextElements textElements)
+    public UIUpdater(IGame game, IUndo undo, IScoreQuery score, TextElements textElements)
     {
         if (game == null) throw new ArgumentNullException("game");
         if (undo == null) throw new ArgumentNullException("undo");

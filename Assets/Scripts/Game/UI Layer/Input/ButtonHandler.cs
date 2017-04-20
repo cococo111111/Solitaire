@@ -12,7 +12,7 @@ public sealed class ButtonHandler : MonoBehaviour
     [SerializeField] Button undoBoardButton;
     [SerializeField] Button quitButton;
 
-    public void Init(IGame game, IUndoHandler undoHandler, IQuit quitHandler)
+    public void Init(IGame game, IUndo undoHandler, IQuit quitHandler)
     {
         if (game == null) throw new ArgumentNullException("game");
         if (undoHandler == null) throw new ArgumentNullException("undoHandler");

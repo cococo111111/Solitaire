@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Interface to the score value.
 /// </summary>
-public interface IScore
+public interface IScoreQuery
 {
     int Score { get; }
 }

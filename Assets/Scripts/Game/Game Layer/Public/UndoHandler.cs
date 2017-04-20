@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-public sealed class UndoHandler : MonoBehaviour, IUndoHandler
+public sealed class UndoHandler : MonoBehaviour, IUndo
 {
-    IUndo undo;
+    IUndoActions undo;
 
-    public void Init(IUndo undo)
+    public void Init(IUndoActions undo)
     {
         if (undo == null) throw new ArgumentNullException("undo");
 

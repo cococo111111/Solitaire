@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public sealed class UndoBoard: IGameActions, IUndo
+public sealed class UndoBoard: IGameActions, IUndoActions
 {
     readonly IBoardQuery boardQuery;
     readonly IBoardActions boardActions;

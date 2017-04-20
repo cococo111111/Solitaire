@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Interface to the game layer responsible for handling undo behaviour.
 /// </summary>
-public interface IUndoHandler
+public interface IUndo
 {
     /// <summary>
     /// Undo the last action.

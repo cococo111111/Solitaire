@@ -7,11 +7,11 @@ using UnityEngine.Assertions;
 public sealed class InputHandler : MonoBehaviour
 {
     IGame game;
-    IUndoHandler undoHandler;
+    IUndo undoHandler;
 
     const float raycastDistance = 100f; 
 
-    public void Init(IGame game, IUndoHandler undoHandler)
+    public void Init(IGame game, IUndo undoHandler)
     {
         if (game == null) throw new ArgumentNullException("game");
         if (undoHandler == null) throw new ArgumentNullException("undoHandler");
